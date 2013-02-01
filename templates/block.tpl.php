@@ -1,15 +1,15 @@
-<div id="block-<?php print $block->module .'-'. $block->delta ?>" class="block block-<?php print $block->module .' '. $block_zebra .' '. $block->region ?> clearfix">
+<div id="block-<?php print $block->module .'-'. $block->delta ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="block-inner">
 
-    <?php if (!empty($block->subject)): ?>
-      <h3 class="title block-title"><?php print $block->subject; ?></h3>
-    <?php endif; ?>
+      <?php print render($title_prefix); ?>
+    <?php if ($block->subject): ?>
+      <h2 class="block-title"<?php print $title_attributes; ?>><?php print $block->subject ?></h2>
+    <?php endif;?>
+      <?php print render($title_suffix); ?>
+		
+		<div class="content" <?php print $content_attributes; ?>>
+		  <?php print $content; ?>
+		</div>
 
-    <div class="content">
-      <?php print $block->content; ?>
-    </div>
-
-    <?php print $edit_links; ?>
-
-  </div> <!-- /block-inner -->
-</div> <!-- /block -->
+  </div>
+</div> <!-- /block-inner /block -->

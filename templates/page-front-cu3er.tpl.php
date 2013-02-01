@@ -135,6 +135,6 @@
 
 	 </div> <!-- /mainPage -->
     <?php
-$theme_path = drupal_get_path('theme', 'cyrano_cg');
+$theme_path = drupal_get_path('theme', 'cyranod7_cg');
 include ($theme_path.'/includes/inc_footer.php');
 ?>

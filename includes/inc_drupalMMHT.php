@@ -8,13 +8,13 @@
  <?php if ($mission || $messages || $help || $tabs): ?>
             <div id="content-header">              
 
-              <?php if ($mission): ?>
-                <div id="mission"><?php print $mission; ?></div>
+              <?php if(!empty($page['mission'])): ?>
+                <div id="mission"> <?php print render($page['mission']); ?></div>
               <?php endif; ?>
 
-              <?php print $messages; ?>
+              <?php print render($page['messages']); ?>
 
-              <?php print $help; ?> 
+              <?php print render($page['help']); ?>
 
               <?php if ($tabs): ?>
                 <div class="tabs"><?php print $tabs; ?></div>

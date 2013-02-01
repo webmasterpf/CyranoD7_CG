@@ -1,5 +1,5 @@
 <?php
-$theme_path = drupal_get_path('theme', 'cyrano_cg');
+$theme_path = drupal_get_path('theme', 'cyranod7_cg');
 include ($theme_path.'/includes/inc_header.php');
 ?>
 <!-- ______________________ LAYOUT HOMEPAGE PANORAMIQUE C.GRAWITZ_______________________ -->
@@ -8,21 +8,21 @@ include ($theme_path.'/includes/inc_header.php');
 	<div id="contentPage">
 
 
-          <?php if ($content_top): ?>
+          <?php if (!empty($page['content_top'])): ?>
             <div id="content-top">
-              <?php print $content_top; ?>
+              <?php print render ($page['content_top']); ?>
             </div> <!-- /#content-top -->
           <?php endif; ?>
 
 <?php
-$theme_path = drupal_get_path('theme', 'cyrano_cg');
+$theme_path = drupal_get_path('theme', 'cyranod7_cg');
 include ($theme_path.'/includes/inc_drupalMMHT.php');
 ?>          
 
    <!-- ______________________ ZONE DIAPO PANORAMIQUE _______________________ -->
 
-              <?php if ($DiapoHP): ?>
-                 <div id="HPDiapo"><?php print $DiapoHP; ?></div>
+           <?php if (!empty($page['DiapoHP'])): ?>
+                 <div id="HPDiapo"><?php print render ($page['DiapoHP']); ?></div>
               <?php endif; ?>
 
 
@@ -59,7 +59,7 @@ include ($theme_path.'/includes/inc_drupalMMHT.php');
 
 	 </div> <!-- /mainPage -->
 <?php
-$theme_path = drupal_get_path('theme', 'cyrano_cg');
+$theme_path = drupal_get_path('theme', 'cyranod7_cg');
 include ($theme_path.'/includes/inc_footer.php');
 ?>
       

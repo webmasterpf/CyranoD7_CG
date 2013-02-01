@@ -14,7 +14,7 @@
       <div id="col_G1" class="page_lycee_entreprise_content_col_G1">
            
              <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_region_col_G1.php');
               ?>
         </div>
@@ -36,12 +36,12 @@
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
 
                  <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_liste_lycee_entreprise.php');
               ?>
 
                     <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_region_col_G2.php');
               ?>
 
@@ -52,18 +52,18 @@
         <!--______________COLONNE 3________________ -->
       <div id="col_G3" class="page_lycee_entreprise_content_col_G3">
            <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_entreprise_logo.php');
               ?>
 
            <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_vue_grawitz_actus.php');
               ?>
 
 
     <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_region_col_G3.php');
               ?>
         </div>

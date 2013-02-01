@@ -19,13 +19,13 @@
             <?php endif; ?>
 
                   <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_vdl_infos_utiles.php');
               ?>
 
 
              <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_region_col_G1.php');
               ?>
         </div>
@@ -63,7 +63,7 @@
             <?php endif;?>
 
              <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_region_col_G2.php');
               ?>
 
@@ -76,7 +76,7 @@
 
 
              <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_vue_autre_event.php');
               ?>
 
@@ -89,7 +89,7 @@
             <?php endif;?>
 
              <?php
-              $theme_path = drupal_get_path('theme', 'cyrano_cg');
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_region_col_G3.php');
               ?>
 

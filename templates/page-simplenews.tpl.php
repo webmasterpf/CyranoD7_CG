@@ -1,5 +1,5 @@
 <?php
-$theme_path = drupal_get_path('theme', 'cyrano_cg');
+$theme_path = drupal_get_path('theme', 'cyranod7_cg');
 include ($theme_path.'/includes/inc_header.php');
 ?>
  <!-- ______________________ LAYOUT PAGE SIMPLENEWS OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
@@ -83,7 +83,7 @@ include ($theme_path.'/includes/inc_header.php');
           <?php endif; ?>
 	 </div> <!-- /contentPage -->
 <?php
-$theme_path = drupal_get_path('theme', 'cyrano_cg');
+$theme_path = drupal_get_path('theme', 'cyranod7_cg');
 include ($theme_path.'/includes/inc_footer.php');
 ?>
      
