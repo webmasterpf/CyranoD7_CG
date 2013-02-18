@@ -5,15 +5,13 @@
   <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
 <div id="col_G1" class="pageLycee_content_col_G1">
 
-     <?php if ($title): /*insertion du titre de la page et style differencié si besoin*/?>
-     <h1 class="titre_pl"><?php print $title; ?></h1>
-
-    <?php endif; ?>
-
+        <?php  print render($title_prefix); ?>
+            <?php if ($title): ?><h1 class="titre_pl"><?php print $title; ?></h1><?php endif; ?>
+                <?php print render($title_suffix); ?>
         
       <br clear="all"/>
        <!-- Deco page-->
-    <?php  print $node->field_image_deco_lycee[0]['view'] /*Image deco page lycee*/ ?>
+         <?php  print render($content['field_image_deco_lycee']);?>
 
         <?php
               $theme_path = drupal_get_path('theme', 'cyranod7_cg');
@@ -22,18 +20,22 @@
 </div>
 <!--______________COLONNE GAUCHE 2________________ -->
 <div id="col_G2" class="pageLycee_content_col_G2">
-     <?php if ($submitted): ?>
-      <span class="submitted"><?php print $submitted; ?></span>
+  <?php print $user_picture; ?>
+		    
+    <?php if ($display_submitted): ?>
+      <span class="submitted"><?php print $date; ?> — <?php print $name; ?></span>
     <?php endif; ?>
     <?php
-     /*insertion du contenu du corps de la page*/
-      print $node->content['body']['#value']
+      // We hide the comments and links now so that we can render them later.
+        hide($content['comments']);
+        hide($content['links']);
+        print render($content['body']);
       ?>
 
 
-      <?php if ($node->field_video_lycee[0]['view']): ?>
+      <?php if(!empty ($content['field_video_lycee'])): ?>
         <div id="video-plycee">
-            <?php  print $node->field_video_lycee[0]['view'];?>
+            <?php  print render($content['field_video_lycee']);?>
         </div>
            <?php endif;?>
 
@@ -46,18 +48,16 @@
 <!--______________COLONNE GAUCHE 3________________ -->
 
 <div id="col_G3" class="pageLycee_content_col_G3">
-     <?php print $picture; ?>
-
-
+    
 
     <div class="content">
 
-
-        <?php if ($node->field_fichier_joint_lycee[0]['view']): ?>
+ <?php if(!empty ($content['field_fichier_joint_lycee'])): ?>
+        
         <div id="fichier-joint-plycee">
             <h3>Documents utiles</h3>
-           <?php  print $node->field_fichier_joint_lycee[0]['view'];?>
-             <?php  print $node->field_lien_page_lycee[0]['view'];?>
+        <?php  print render($content['field_fichier_joint_lycee']);?>
+         <?php  print render($content['field_lien_page_lycee']);?>
 
         </div>
            <?php endif;?>

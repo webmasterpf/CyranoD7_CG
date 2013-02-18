@@ -47,7 +47,7 @@ height:25px;
 width:590px;
 
 }
-
+#navPicto table,#navPicto tbody{border: 0;}
 #navPicto td{
 border:0;
 height:25px;
@@ -86,7 +86,7 @@ margin: 2px 0 0 0;
 background: url(../images/bg_recherche.gif) no-repeat left 5px;
 height: 25px;
 display: block;
-float: right;
+float: right;width: 210px;
 }
 #search{
   width: 225px;

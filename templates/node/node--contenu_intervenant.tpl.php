@@ -14,9 +14,9 @@
          */?>
 
             <div id="col_G1" class="cint_content_col_G1">
-            <?php if ($title): /*copier le titre dans la colonne desirée*/?>
-            <h1 class="titre_page"><?php print $title; ?></h1>
-            <?php endif; ?>
+            <?php  print render($title_prefix); ?>
+            <?php if ($title): ?><h1 class="titre_page"><?php print $title; ?></h1><?php endif; ?>
+                <?php print render($title_suffix); ?>
 
                   <?php
               $theme_path = drupal_get_path('theme', 'cyranod7_cg');
@@ -33,32 +33,37 @@
          <!-- <pre> <?php //print_r($node); //listage des variables du $content  ?> </pre>-->
         <div id="col_G2" class="cint_content_col_G2">
 
-            <?php print $picture; ?>
-
-            <?php if ($submitted): ?>
-            <span class="submitted"><?php print $submitted; ?></span>
-            <?php endif; ?>
+           <?php print $user_picture; ?>
+		    
+    <?php if ($display_submitted): ?>
+      <span class="submitted"><?php print $date; ?> — <?php print $name; ?></span>
+    <?php endif; ?>
 
             <div class="content">
                 
-                  <?php if ($node->field_illustration_vdl[0]['view']): ?>
+ <?php if (!empty($content['field_illustration_vdl'])): ?>                
             <div id="illustration-vdl">
-                    <?php  print $node->field_illustration_vdl[0]['view']  ?>
+<?php  print render($content['field_illustration_vdl']);  ?>
             </div>
             <?php endif;?>
 
 
-                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
+                <?php 
+  	    // We hide the comments and links now so that we can render them later.
+        hide($content['comments']);
+        hide($content['links']);
+        print render($content['body']);
+       ?>
 
-                   <?php if ($node->field_video_vdl[0]['view']): ?>
+                    <?php if (!empty($content['field_video_vdl'])): ?> 
             <div id="video-vdl">
-                    <?php  print $node->field_video_vdl[0]['view']  ?>
+                    <?php print render($content['field_video_vdl']);   ?>
             </div>
             <?php endif;?>
 
-                   <?php if ($node->field_choix_galerie_vdl[0]['view']): ?>
+                  <?php if (!empty($content['field_choix_galerie_vdl'])): ?> 
             <div id="galerie-vdl">
-                    <?php  print $node->field_choix_galerie_vdl[0]['view']  ?>
+                    <?php print render($content['field_choix_galerie_vdl']);  ?>
             </div>
             <?php endif;?>
 
@@ -87,13 +92,13 @@
 
         </div>
 
-        <?php if ($terms): ?>
-        <div class="taxonomy"><?php //print $terms; ?></div>
-        <?php endif;?>
-
-        <?php if ($links): ?>
-        <div class="links"> <?php //print $links; ?></div>
-        <?php endif; ?>
+        <?php if (!empty($content['links']['terms'])): ?>
+      <div class="terms"><?php print render($content['links']['terms']); ?></div>
+    <?php endif;?>
+  	
+    <?php if (!empty($content['links'])): ?>
+	    <div class="links"><?php print render($content['links']); ?></div>
+	  <?php endif; ?>
 
     </div> <!-- /node-inner -->
 </div> <!-- /node-->

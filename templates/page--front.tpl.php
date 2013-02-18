@@ -25,30 +25,26 @@ include ($theme_path.'/includes/inc_drupalMMHT.php');
                  <div id="HPDiapo"><?php print render ($page['DiapoHP']); ?></div>
               <?php endif; ?>
 
-
-
-
-
 	<br clear="all"/>
 
 
 <!-- ______________________ PARTIE BAS GAUCHE _______________________ -->
-                 <?php if ($HPBasGauche): ?>
-                 <div id="BasGaucheHP"><?php print $HPBasGauche; ?></div>
+                 <?php if (!empty($page['HPBasGauche'])): ?>
+                 <div id="BasGaucheHP"><?php print render ($page['HPBasGauche']); ?></div>
               <?php endif; ?>
 
 <!-- ______________________ PARTIE BAS DROITE _______________________ -->
 
 
-
-        <?php if ($HPBasDroit): ?>
-     <div id="BasDroitHP"><?php print $HPBasDroit; ?></div>
+<?php if (!empty($page['HPBasDroit'])): ?>
+      
+     <div id="BasDroitHP"><?php print render ($page['HPBasDroit']); ?></div>
         <?php endif; ?>
      <br clear="all"/>
 	<!-- ______________________ CONTENU BAS _______________________ -->
-    <?php if ($content_bottom_home): ?>
+    <?php if (!empty($page['content_bottom_home'])): ?>
     <div id="content-bottom-home">
-      <?php print $content_bottom_home; ?>
+      <?php print render ($page['content_bottom_home']); ?>
         <?php //print $feed_icons; ?>
          <?php endif; ?>
 
@@ -62,4 +58,3 @@ include ($theme_path.'/includes/inc_drupalMMHT.php');
 $theme_path = drupal_get_path('theme', 'cyranod7_cg');
 include ($theme_path.'/includes/inc_footer.php');
 ?>
-      

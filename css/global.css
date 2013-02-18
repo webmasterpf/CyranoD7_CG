@@ -539,7 +539,7 @@ padding:10px 0;
 #bloc_grawitz_actus{}
 
 .table_ga tbody,.table_ae tbody{
-  width: 200px;
+  width: 200px;border: 0;
   
 }
 .table_ga td,.table_ae td{
@@ -1087,7 +1087,7 @@ h1.titre_page_actualites{
     text-align: right;
 }
 .table_liste_actualites{
-    padding: 5px;
+    padding: 5px;width: 100%;
 }
 .table_liste_actualites tbody{}
 .table_liste_actualites tr{

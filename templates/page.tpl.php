@@ -70,9 +70,10 @@
 
    
             <div id="content-bottom">
-                 <?php if ($page ['content_bottom']): ?>
+                 <?php if (!empty($page ['content_bottom'])): ?>
               <?php print ($page ['content_bottom']); ?>
                   <?php endif; ?>
+                
     <?php if ($main_menu || $secondary_menu): /*Si utilise Menu Principal de Drupal alors il faut cacher cette partie*/ ?>
       <div id="navigation" class="menu <?php if (!empty($main_menu)) {print "with-primary";} if (!empty($secondary_menu)) {print " with-secondary";} ?>">
         <?php /*print theme('links', array('links' => $main_menu, 'attributes' => array('id' => 'primary', 'class' => array('links', 'clearfix', 'main-menu')))); */?>

@@ -2,14 +2,13 @@
 /* 
  * Permet de créer une region pour la colonne G1 dans les node.tpl
  * <p>LA REGION EXISTE</p>
+ * Version Drupal 7
  */
 
 ?>
+<h2>La colonne 1 - region existe</h2>
 
-<?php //regions pour inserer un bloc dans la colonne G1
-if ($col_G1): ?>
-<div id="region_col_G1">
-    <?php  print $col_G1; ?>
-</div>
-    <?php endif; ?>
+<?php if(!empty ($page['col_G1'])): ?>
+     <?php print render ($page['col_G1']); ?>
+<?php endif; ?>
 <br clear="all"/>

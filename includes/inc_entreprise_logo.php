@@ -6,6 +6,9 @@
 
 ?>
 <div id="cg_logo_entreprise">
-<img src="/sites/all/themes/Cyrano_CG/images/CG_logo_entreprise.jpg"/>
+    <?php $theme_path = drupal_get_path('theme', 'cyranod7_cg');
+   
+ print '<img src="'.$theme_path.'/images/CG_logo_entreprise.jpg"/>';
 
+?>
 </div>

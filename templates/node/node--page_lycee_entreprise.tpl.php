@@ -11,7 +11,7 @@
          * .col2_layout_200_590_200{} .col2_layout_330_all{} .col2_layout_18_56_25{}
          * .col3_layout_200_590_200{} .col3_layout_330_all{} .col3_layout_18_56_25{}
          */?>
-      <div id="col_G1" class="page_vdl_content_col_G1">
+      <div id="col_G1" class="page_lycee_entreprise_content_col_G1">
            
              <?php
               $theme_path = drupal_get_path('theme', 'cyranod7_cg');
@@ -20,24 +20,29 @@
         </div>
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-         <div id="col_G2" class="page_vdl_content_col_G2">
+         <div id="col_G2" class="page_lycee_entreprise_content_col_G2">
 
-              <?php if ($title): /*copier le titre dans la colonne desirée*/?>
-            <h1 class="titre_page_vdl"><?php print $title; ?></h1>
-            <?php endif; ?>
+  <?php  print render($title_prefix); ?>
+            <?php if ($title): ?><h1 class="titre_page_lycee_entreprise"><?php print $title; ?></h1><?php endif; ?>
+               
             
-            <?php print $picture; ?>
-
-            <?php if ($submitted): ?>
-            <span class="submitted"><?php print $submitted; ?></span>
-            <?php endif; ?>
+             <?php print $user_picture; ?>
+		    
+    <?php if ($display_submitted): ?>
+      <span class="submitted"><?php print $date; ?> — <?php print $name; ?></span>
+    <?php endif; ?>
 
             <div class="content">
-                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
+                <?php 
+  	    // We hide the comments and links now so that we can render them later.
+        hide($content['comments']);
+        hide($content['links']);
+        print render($content['body']);
+       ?>
 
                  <?php
               $theme_path = drupal_get_path('theme', 'cyranod7_cg');
-              include ($theme_path.'/includes/inc_liste_vdl.php');
+              include ($theme_path.'/includes/inc_liste_lycee_entreprise.php');
               ?>
 
                     <?php
@@ -50,10 +55,13 @@
         </div>
 
         <!--______________COLONNE 3________________ -->
-      <div id="col_G3" class="page_vdl_content_col_G3">
-         
+      <div id="col_G3" class="page_lycee_entreprise_content_col_G3">
+           <?php
+              $theme_path = drupal_get_path('theme', 'cyranod7_cg');
+              include ($theme_path.'/includes/inc_entreprise_logo.php');
+              ?>
 
-           <?php 
+           <?php
               $theme_path = drupal_get_path('theme', 'cyranod7_cg');
               include ($theme_path.'/includes/inc_vue_grawitz_actus.php');
               ?>
@@ -65,13 +73,13 @@
               ?>
         </div>
 
-        <?php if ($terms): ?>
-        <div class="taxonomy"><?php //print $terms; ?></div>
-        <?php endif;?>
-
-        <?php if ($links): ?>
-        <div class="links"> <?php //print $links; ?></div>
-        <?php endif; ?>
+          <?php if (!empty($content['links']['terms'])): ?>
+      <div class="terms"><?php print render($content['links']['terms']); ?></div>
+    <?php endif;?>
+  	
+    <?php if (!empty($content['links'])): ?>
+	    <div class="links"><?php print render($content['links']); ?></div>
+	  <?php endif; ?>
 
     </div> <!-- /node-inner -->
 </div> <!-- /node-->

@@ -5,12 +5,10 @@
  */
 
 ?>
-
-      
-    <?php
+<?php
 $viewname_ag1 = 'Actualites_liste_globale';
 $view = views_get_view ($viewname_ag1);
-$viewdisplay = $view->set_display('block_1');
+$viewdisplay_ag1 = $view->set_display('block_1');
 $args_ag1 = $view->set_arguments(array($node->nid));
 
 
